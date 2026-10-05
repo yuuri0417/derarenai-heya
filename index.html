@@ -7,80 +7,168 @@
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <title>二人で〇〇しないと出られない部屋</title>
 <style>
-:root{--paper:#f3eee2;--ink:#26231f;--muted:#756e63;--red:#a22b26}
+:root{
+  --paper:#f3eee2;
+  --paper2:#e9e0cf;
+  --ink:#26231f;
+  --muted:#756e63;
+  --red:#a22b26;
+  --line:#39342d;
+}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink)}
-body{font-family:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro","Noto Serif JP",serif;background:radial-gradient(circle at 18% 12%,rgba(255,255,255,.65),transparent 26%),repeating-linear-gradient(0deg,rgba(40,35,28,.018) 0,rgba(40,35,28,.018) 1px,transparent 1px,transparent 5px),var(--paper)}
-.wrap{width:min(100% - 32px,560px);min-height:100svh;margin:auto;padding:clamp(34px,8vh,72px) 0 32px;display:flex;flex-direction:column}
-header{text-align:center;margin-bottom:28px}.kicker{font-size:12px;letter-spacing:.34em;color:var(--muted);margin-bottom:12px}
+body{
+  font-family:"Yu Mincho","Hiragino Mincho ProN","Hiragino Mincho Pro","Noto Serif JP",serif;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255,255,255,.65), transparent 26%),
+    repeating-linear-gradient(0deg, rgba(40,35,28,.018) 0, rgba(40,35,28,.018) 1px, transparent 1px, transparent 5px),
+    var(--paper);
+}
+.wrap{
+  width:min(100% - 32px,560px);
+  min-height:100svh;
+  margin:auto;
+  padding:clamp(34px,8vh,72px) 0 32px;
+  display:flex;
+  flex-direction:column;
+}
+header{text-align:center;margin-bottom:28px}
+.kicker{font-size:12px;letter-spacing:.34em;color:var(--muted);margin-bottom:12px}
 h1{font-size:clamp(23px,6vw,31px);font-weight:500;line-height:1.55;letter-spacing:.08em;margin:0}
 .rule{width:56px;height:1px;background:var(--red);margin:18px auto 0}
-.panel{border:1px solid rgba(38,35,31,.62);padding:24px 20px 22px;background:rgba(255,255,255,.15);box-shadow:inset 0 0 0 5px rgba(38,35,31,.035)}
+.panel{
+  border:1px solid rgba(38,35,31,.62);
+  padding:24px 20px 22px;
+  background:rgba(255,255,255,.15);
+  box-shadow:inset 0 0 0 5px rgba(38,35,31,.035);
+}
 .label{text-align:center;color:var(--muted);font-size:12px;letter-spacing:.28em;margin-bottom:15px}
 .cards{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:25px}
-.card{width:94px;height:132px;border:2px solid var(--ink);border-radius:5px;display:grid;place-items:center;position:relative;background:#f7f1e6;box-shadow:3px 4px 0 rgba(38,35,31,.12)}
+.card{
+  width:94px;height:132px;border:2px solid var(--ink);border-radius:5px;
+  display:grid;place-items:center;position:relative;background:#f7f1e6;
+  box-shadow:3px 4px 0 rgba(38,35,31,.12);
+}
 .card:before{content:"";position:absolute;inset:5px;border:1px solid var(--red);opacity:.85}
 .card span{font-size:30px;letter-spacing:.08em;writing-mode:vertical-rl;position:relative}
-.cross{font-size:18px;color:var(--red)}.number{text-align:center;font-size:13px;letter-spacing:.22em;color:var(--muted);margin-bottom:14px}
-.prompt{min-height:92px;display:grid;place-items:center;text-align:center;font-size:clamp(18px,4.8vw,22px);line-height:1.85;font-weight:500}
-.accent{color:var(--red);font-weight:700}.subword{border-bottom:1px solid var(--red);padding:0 .08em;font-weight:700}
+.cross{font-size:18px;color:var(--red)}
+.number{text-align:center;font-size:13px;letter-spacing:.22em;color:var(--muted);margin-bottom:14px}
+.prompt{
+  min-height:92px;display:grid;place-items:center;text-align:center;
+  font-size:clamp(18px,4.8vw,22px);line-height:1.85;font-weight:500;
+}
+.accent{color:var(--red);font-weight:700}
+.subword{border-bottom:1px solid var(--red);padding:0 .08em;font-weight:700}
 .nowrap{white-space:nowrap;display:inline-block}
-button{appearance:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font:inherit;font-size:16px;letter-spacing:.16em;border-radius:2px;width:100%;padding:15px 18px;margin-top:22px;cursor:pointer;transition:transform .08s ease,opacity .15s ease}
-button:active{transform:translateY(1px)}button:hover{opacity:.9}.note{text-align:center;color:var(--muted);font-size:11px;line-height:1.7;margin:14px 0 0}
+button{
+  appearance:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);
+  font:inherit;font-size:16px;letter-spacing:.16em;border-radius:2px;
+  width:100%;padding:15px 18px;margin-top:22px;cursor:pointer;
+  transition:transform .08s ease,opacity .15s ease;
+}
+button:active{transform:translateY(1px)}
+button:hover{opacity:.9}
+.note{text-align:center;color:var(--muted);font-size:11px;line-height:1.7;margin:14px 0 0}
 footer{margin-top:auto;padding-top:28px;text-align:center;color:#91887b;font-size:10px;letter-spacing:.18em}
-.intro{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:12vh}.intro .panel{text-align:center;padding:34px 22px}
-.intro p{font-size:14px;line-height:2;color:var(--muted);margin:0 0 8px}.hidden{display:none!important}
-@media(max-width:380px){.wrap{width:min(100% - 22px,560px);padding-top:26px}.card{width:82px;height:116px}.card span{font-size:27px}.panel{padding-left:14px;padding-right:14px}}
+.intro{flex:1;display:flex;flex-direction:column;justify-content:center;padding-bottom:12vh}
+.intro .panel{text-align:center;padding:34px 22px}
+.intro p{font-size:14px;line-height:2;color:var(--muted);margin:0 0 8px}
+.hidden{display:none!important}
+@media (max-width:380px){
+  .wrap{width:min(100% - 22px,560px);padding-top:26px}
+  .card{width:82px;height:116px}
+  .card span{font-size:27px}
+  .panel{padding-left:14px;padding-right:14px}
+}
 </style>
 </head>
 <body>
 <main class="wrap">
-<section id="intro" class="intro">
-<header><div class="kicker">今　宵　の　一　室</div><h1>二人で〇〇しないと<br>出られない部屋</h1><div class="rule"></div></header>
-<div class="panel"><p>選ばれた二人には、<br>部屋から出るためのお題が与えられます。</p><button id="enter">部屋に入る</button></div>
-</section>
-<section id="result" class="hidden">
-<header><div class="kicker">二人で〇〇しないと出られない部屋</div><h1>今回の入室者</h1><div class="rule"></div></header>
-<div class="panel"><div class="label">入　室　者</div><div class="cards"><div class="card"><span id="personA">松</span></div><div class="cross">×</div><div class="card"><span id="personB">梅</span></div></div><div id="number" class="number">第壱番</div><div id="prompt" class="prompt"></div></div>
-<button id="again">別の部屋に入る</button><p class="note">※ 抽選結果は毎回ランダムです</p>
-</section><footer>お題二十種　｜　26.10更新</footer></main>
+  <section id="intro" class="intro">
+    <header>
+      <div class="kicker">今　宵　の　一　室</div>
+      <h1>二人で〇〇しないと<br>出られない部屋</h1>
+      <div class="rule"></div>
+    </header>
+    <div class="panel">
+      <p>選ばれた二人には、<br>部屋から出るためのお題が与えられます。</p>
+      <button id="enter">部屋に入る</button>
+    </div>
+  </section>
+
+  <section id="result" class="hidden">
+    <header>
+      <div class="kicker">二人で〇〇しないと出られない部屋</div>
+      <h1>今回の入室者</h1>
+      <div class="rule"></div>
+    </header>
+    <div class="panel">
+      <div class="label">入　室　者</div>
+      <div class="cards">
+        <div class="card"><span id="personA">松</span></div>
+        <div class="cross">×</div>
+        <div class="card"><span id="personB">梅</span></div>
+      </div>
+      <div id="number" class="number">第壱番</div>
+      <div id="prompt" class="prompt"></div>
+    </div>
+    <button id="again">別の部屋に入る</button>
+    <p class="note">※ 抽選結果は毎回ランダムです</p>
+  </section>
+  <footer>お題二十種　｜　26.10更新</footer>
+</main>
+
 <script>
-const members=["松","梅","桜","藤","菖蒲","牡丹","萩","芒","菊","紅葉","柳","桐","雨"];
-const favorites=["動物","飲み物","色","科目","乗り物"];
-const associations=["夏","冬","動物園","水族館","黄色","赤色","青色"];
-const prompts=[
-()=> "二人の共通点を5つ見つけないと出られない",
-()=> "二人で料理を一品作らないと出られない",
-()=> "二人で1000ピースのジグソーパズルを完成させないと出られない",
-()=> "お互いの似顔絵を描かないと出られない",
-()=> "二人でトランプタワーを5段積まないと出られない",
-()=> "二人でホールケーキを一つ食べ切らないと出られない",
-()=> "二人で合計100回腹筋をしないと出られない",
-()=> "二人でホラー映画を1本鑑賞しないと出られない",
-()=> "二人で流行りのダンスの振り付けを完コピしないと出られない",
-()=> "お互いに相手に似合う異性装を選び、着替えないと出られない",
-()=> "どちらかが寝つかないと出られない",
-()=> "相手の好きなところと嫌いなところを一つずつ言わないと出られない",
-()=> "お互いに自分の嫌いな食べ物を一つずつ食べないと出られない",
-()=> "お互いの肌が触れた状態で5分間過ごさないと出られない",
-()=> "部屋に隠された暗号を解かないと出られない",
-()=>`相手の好きな<span class="nowrap">「<span class="subword">${pick(favorites)}</span>」</span>を当てないと出られない`,
-()=>`<span class="nowrap">「<span class="subword">${pick(associations)}</span>といえば？」</span>に、二人で「せーの」で同じ答えを出さないと出られない`,
-()=> "二人でお互いを合計10m抱えて運ばないと出られない",
-(a,b)=>{const third=pick(members.filter(x=>x!==a&&x!==b));return `<span class="nowrap">「<span class="subword">${third}</span>」</span>とのエピソードを、それぞれ一つ以上話さないと出られない`},
-()=>`<span class="nowrap">「<span class="accent">あの夏</span>」</span>のことを話さないと出られない`
+const members = ["松","梅","桜","藤","菖蒲","牡丹","萩","芒","菊","紅葉","柳","桐","雨"];
+const favorites = ["動物","飲み物","色","科目","乗り物"];
+const associations = ["夏","冬","動物園","水族館","黄色","赤色","青色"];
+
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+const prompts = [
+  () => "二人の共通点を5つ見つけないと出られない",
+  () => "二人で料理を一品作らないと出られない",
+  () => "二人で1000ピースのジグソーパズルを完成させないと出られない",
+  () => "お互いの似顔絵を描かないと出られない",
+  () => "二人でトランプタワーを5段積まないと出られない",
+  () => "二人でホールケーキを一つ食べ切らないと出られない",
+  () => "二人で合計100回腹筋をしないと出られない",
+  () => "二人でホラー映画を1本鑑賞しないと出られない",
+  () => "二人で流行りのダンスの振り付けを完コピしないと出られない",
+  () => "お互いに相手に似合う異性装を選び、着替えないと出られない",
+  () => "どちらかが寝つかないと出られない",
+  () => "相手の好きなところと嫌いなところを一つずつ言わないと出られない",
+  () => "お互いに自分の嫌いな食べ物を一つずつ食べないと出られない",
+  () => "お互いの肌が触れた状態で5分間過ごさないと出られない",
+  () => "部屋に隠された暗号を解かないと出られない",
+  () => `相手の好きな<span class="nowrap">「<span class="subword">${pick(favorites)}</span>」</span>を当てないと出られない`,
+  () => `<span class="nowrap">「<span class="subword">${pick(associations)}</span>といえば？」</span>に、二人で「せーの」で同じ答えを出さないと出られない`,
+  () => "二人でお互いを合計10m抱えて運ばないと出られない",
+  (a,b) => {
+    const third = pick(members.filter(x => x !== a && x !== b));
+    return `<span class="nowrap">「<span class="subword">${third}</span>」</span>とのエピソードを、それぞれ一つ以上話さないと出られない`;
+  },
+  () => `<span class="nowrap">「<span class="accent">あの夏</span>」</span>のことを話さないと出られない`
 ];
-const kansuji=["壱","弐","参","四","五","六","七","八","九","拾","拾壱","拾弐","拾参","拾四","拾五","拾六","拾七","拾八","拾九","弐拾"];
-function pick(a){return a[Math.floor(Math.random()*a.length)]}
-const personAEl=document.getElementById("personA");
-const personBEl=document.getElementById("personB");
-const numberEl=document.getElementById("number");
-const promptEl=document.getElementById("prompt");
-const introEl=document.getElementById("intro");
-const resultEl=document.getElementById("result");
-const enterEl=document.getElementById("enter");
-const againEl=document.getElementById("again");
-function draw(){const a=pick(members),b=pick(members.filter(x=>x!==a)),n=Math.floor(Math.random()*20);personAEl.textContent=a;personBEl.textContent=b;numberEl.textContent=`第${kansuji[n]}番`;promptEl.innerHTML=prompts[n](a,b);introEl.classList.add("hidden");resultEl.classList.remove("hidden")}
-enterEl.addEventListener("click",draw);againEl.addEventListener("click",draw);
+
+const kansuji = ["壱","弐","参","四","五","六","七","八","九","拾","拾壱","拾弐","拾参","拾四","拾五","拾六","拾七","拾八","拾九","弐拾"];
+
+function draw(){
+  const a = pick(members);
+  const b = pick(members.filter(x => x !== a));
+  const n = Math.floor(Math.random()*20);
+
+  document.getElementById("personA").textContent = a;
+  document.getElementById("personB").textContent = b;
+  document.getElementById("number").textContent = `第${kansuji[n]}番`;
+  document.getElementById("prompt").innerHTML = prompts[n](a,b);
+
+  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("result").classList.remove("hidden");
+}
+
+document.getElementById("enter").addEventListener("click", draw);
+document.getElementById("again").addEventListener("click", draw);
 </script>
-</body></html>
+</body>
+</html>
