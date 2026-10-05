@@ -72,7 +72,15 @@ const prompts=[
 ];
 const kansuji=["壱","弐","参","四","五","六","七","八","九","拾","拾壱","拾弐","拾参","拾四","拾五","拾六","拾七","拾八","拾九","弐拾"];
 function pick(a){return a[Math.floor(Math.random()*a.length)]}
-function draw(){const a=pick(members),b=pick(members.filter(x=>x!==a)),n=Math.floor(Math.random()*20);personA.textContent=a;personB.textContent=b;number.textContent=`第${kansuji[n]}番`;prompt.innerHTML=prompts[n](a,b);intro.classList.add("hidden");result.classList.remove("hidden")}
-enter.addEventListener("click",draw);again.addEventListener("click",draw);
+const personAEl=document.getElementById("personA");
+const personBEl=document.getElementById("personB");
+const numberEl=document.getElementById("number");
+const promptEl=document.getElementById("prompt");
+const introEl=document.getElementById("intro");
+const resultEl=document.getElementById("result");
+const enterEl=document.getElementById("enter");
+const againEl=document.getElementById("again");
+function draw(){const a=pick(members),b=pick(members.filter(x=>x!==a)),n=Math.floor(Math.random()*20);personAEl.textContent=a;personBEl.textContent=b;numberEl.textContent=`第${kansuji[n]}番`;promptEl.innerHTML=prompts[n](a,b);introEl.classList.add("hidden");resultEl.classList.remove("hidden")}
+enterEl.addEventListener("click",draw);againEl.addEventListener("click",draw);
 </script>
 </body></html>
